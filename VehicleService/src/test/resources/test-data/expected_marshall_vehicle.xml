@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<vehicle>
+	
+	<registrationNumber>V123JAY</registrationNumber>
+	<make>Volkswagen</make>
+	<model>Golf GT TDI</model>
+	<engineSize>2.0</engineSize>
+	<yearOfManufacture>2006</yearOfManufacture>
+	<registeredKeeper>
+		<firstName>Vijay</firstName>
+		<lastName>Patel</lastName>
+		<houseNumber>21</houseNumber>
+		<street>Blue Street</street>
+		<area>Stoke</area>
+		<city>Coventry</city>
+		<postcode>CV2 4ED</postcode>
+		<registeredFrom>1994-01-01</registeredFrom>
+		<registeredTo>2012-02-05</registeredTo>
+	</registeredKeeper>
+	<motDueDate>2012-05-05</motDueDate>
+
+</vehicle>

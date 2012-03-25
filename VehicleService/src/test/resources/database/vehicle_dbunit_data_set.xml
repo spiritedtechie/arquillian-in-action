@@ -1,0 +1,46 @@
+<!DOCTYPE dataset SYSTEM "dataset.dtd">
+<dataset>
+	<table name="RegisteredKeeper">
+		<column>id</column>
+		<column>firstName</column>
+		<column>lastName</column>
+		<column>houseNumber</column>
+		<column>street</column>
+		<column>area</column>
+		<column>city</column>
+		<column>postcode</column>
+		<column>registeredFrom</column>
+		<column>registeredTo</column>
+		<row>
+			<value>1</value>
+			<value>Vijay</value>
+			<value>Patel</value>
+			<value>21</value>
+			<value>Blue Street</value>
+			<value>Stoke</value>
+			<value>Coventry</value>
+			<value>CV2 4ED</value>
+			<value>1994-01-01</value>
+			<null />
+		</row>
+	</table>
+	<table name="Vehicle">
+		<column>registrationNumber</column>
+		<column>make</column>
+		<column>model</column>
+		<column>engineSize</column>
+		<column>yearOfManufacture</column>
+		<column>registeredKeeper_id</column>
+		<column>motDueDate</column>
+		<row>
+			<value>V123JAY</value>
+			<value>Volkswagen</value>
+			<value>Golf GT TDI</value>
+			<value>2.1</value>
+			<value>2006-01-01</value>
+			<value>1</value>
+			<value>2012-05-05</value>
+		</row>
+	</table>
+
+</dataset>
