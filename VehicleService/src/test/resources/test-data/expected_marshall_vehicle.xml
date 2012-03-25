@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <vehicle>
 	
-	<registrationNumber>V123JAY</registrationNumber>
+	<registrationNumber>A123BCD</registrationNumber>
 	<make>Volkswagen</make>
 	<model>Golf GT TDI</model>
 	<engineSize>2.0</engineSize>
@@ -11,9 +11,9 @@
 		<lastName>Patel</lastName>
 		<houseNumber>21</houseNumber>
 		<street>Blue Street</street>
-		<area>Stoke</area>
+		<area>Area</area>
 		<city>Coventry</city>
-		<postcode>CV2 4ED</postcode>
+		<postcode>CV11VV</postcode>
 		<registeredFrom>1994-01-01</registeredFrom>
 		<registeredTo>2012-02-05</registeredTo>
 	</registeredKeeper>

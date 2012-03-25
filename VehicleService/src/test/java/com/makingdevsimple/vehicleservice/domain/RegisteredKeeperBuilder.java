@@ -14,11 +14,11 @@ public class RegisteredKeeperBuilder {
 
     private final String street = "Blue Street";
 
-    private final String area = "Stoke";
+    private final String area = "Area";
 
     private final String city = "Coventry";
 
-    private final String postcode = "CV2 4ED";
+    private final String postcode = "CV11VV";
 
     private final Date registeredFrom = dateWithYearMonthAndDay(1994, 01, 01);
 

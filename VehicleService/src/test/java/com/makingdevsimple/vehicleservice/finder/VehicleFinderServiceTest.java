@@ -17,7 +17,7 @@ import com.makingdevsimple.vehicleservice.domain.Vehicle;
 
 public class VehicleFinderServiceTest {
 
-    private static final String REG_NO = "V123JAY";
+    private static final String REG_NO = "A123BCD";
 
     private VehicleInProcessDatabase database;
 

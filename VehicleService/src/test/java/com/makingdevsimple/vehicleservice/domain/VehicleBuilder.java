@@ -4,7 +4,7 @@ import java.util.Date;
 
 public class VehicleBuilder {
 
-    private String registrationNo = "V123JAY";
+    private String registrationNo = "A123BCD";
 
     private final String make = "Volkswagen";
 

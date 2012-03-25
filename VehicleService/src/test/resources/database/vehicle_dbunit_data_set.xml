@@ -17,9 +17,9 @@
 			<value>Patel</value>
 			<value>21</value>
 			<value>Blue Street</value>
-			<value>Stoke</value>
+			<value>Area</value>
 			<value>Coventry</value>
-			<value>CV2 4ED</value>
+			<value>CV11VV</value>
 			<value>1994-01-01</value>
 			<null />
 		</row>
@@ -33,7 +33,7 @@
 		<column>registeredKeeper_id</column>
 		<column>motDueDate</column>
 		<row>
-			<value>V123JAY</value>
+			<value>A123BCD</value>
 			<value>Volkswagen</value>
 			<value>Golf GT TDI</value>
 			<value>2.1</value>

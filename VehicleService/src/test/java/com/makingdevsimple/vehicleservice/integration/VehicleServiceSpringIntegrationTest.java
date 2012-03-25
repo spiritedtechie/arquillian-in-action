@@ -40,7 +40,7 @@ public class VehicleServiceSpringIntegrationTest {
     @Test
     public void testVehicleServiceWiring() throws Exception {
 
-        final Vehicle vehicle = service.getVehicleByRegistration("V123JAY");
+        final Vehicle vehicle = service.getVehicleByRegistration("A123BCD");
         assertThat("Vehicle", vehicle, is(notNullValue()));
     }
 

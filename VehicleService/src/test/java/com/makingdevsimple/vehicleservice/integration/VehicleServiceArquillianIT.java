@@ -34,7 +34,7 @@ import com.makingdevsimple.vehicleservice.database.VehicleServerDatabase;
 public class VehicleServiceArquillianIT {
 
     private static VehicleServerDatabase database;
- 
+
     @Deployment
     public static WebArchive setupDeployment() throws Exception {
 
@@ -59,17 +59,17 @@ public class VehicleServiceArquillianIT {
     @Test
     public void testVehicleFound() throws Exception {
 
-        final VehicleResponse response = executeHttpCallToFindVehicle("V123JAY");
+        final VehicleResponse response = executeHttpCallToFindVehicle("A123BCD");
 
         assertThat(response.getStatus(), is(200));
-        assertThat(response.getVehicleXml(), containsString("<registrationNumber>" + "V123JAY"
+        assertThat(response.getVehicleXml(), containsString("<registrationNumber>" + "A123BCD"
                 + "</registrationNumber>"));
     }
 
     @Test
     public void testVehicleNotFound() throws Exception {
 
-        final VehicleResponse response = executeHttpCallToFindVehicle("V456JAY");
+        final VehicleResponse response = executeHttpCallToFindVehicle("A456BCD");
 
         assertThat(response.getStatus(), is(404));
     }
