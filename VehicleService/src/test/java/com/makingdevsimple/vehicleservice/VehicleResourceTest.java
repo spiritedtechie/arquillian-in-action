@@ -24,9 +24,9 @@ import org.junit.runner.RunWith;
 import com.makingdevsimple.vehicleservice.finder.VehicleFinderService;
 
 @RunWith(JMock.class)
-public class VehicleServiceTest {
+public class VehicleResourceTest {
 
-    private VehicleService service;
+    private VehicleResource resource;
 
     private Mockery mockery;
 
@@ -40,10 +40,10 @@ public class VehicleServiceTest {
         mockery = new JUnit4Mockery();
         finderService = mockery.mock(VehicleFinderService.class);
 
-        service = new VehicleServiceImpl(finderService);
+        resource = new VehicleResourceImpl(finderService);
 
         dispatcher = MockDispatcherFactory.createDispatcher();
-        dispatcher.getRegistry().addSingletonResource(service);
+        dispatcher.getRegistry().addSingletonResource(resource);
         dispatcher.getProviderFactory().addMessageBodyWriter(DocumentProvider.class);
         dispatcher.getProviderFactory().addExceptionMapper(new InvalidParameterExceptionMapper());
         dispatcher.getProviderFactory().addExceptionMapper(new VechicleNotFoundExceptionMapper());

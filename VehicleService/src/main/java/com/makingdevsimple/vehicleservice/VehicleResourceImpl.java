@@ -13,15 +13,15 @@ import com.makingdevsimple.vehicleservice.finder.VehicleFinderService;
 
 @Path("/vehicle")
 @Component
-public class VehicleServiceImpl implements VehicleService {
+public class VehicleResourceImpl implements VehicleResource {
 
     @Autowired
     private VehicleFinderService finderService;
 
-    public VehicleServiceImpl() {
+    public VehicleResourceImpl() {
     }
 
-    public VehicleServiceImpl(final VehicleFinderService finderService) {
+    public VehicleResourceImpl(final VehicleFinderService finderService) {
         this.finderService = finderService;
     }
 

@@ -11,7 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import com.makingdevsimple.vehicleservice.VehicleService;
+import com.makingdevsimple.vehicleservice.VehicleResource;
 import com.makingdevsimple.vehicleservice.database.VehicleInProcessDatabase;
 import com.makingdevsimple.vehicleservice.domain.Vehicle;
 import com.makingdevsimple.vehicleservice.exception.VehicleNotFoundException;
@@ -27,7 +27,7 @@ public class VehicleServiceSpringIntegrationTest {
     private VehicleInProcessDatabase database;
 
     @Autowired
-    private VehicleService service;
+    private VehicleResource service;
 
     @Before
     public void setUp() throws Exception {
