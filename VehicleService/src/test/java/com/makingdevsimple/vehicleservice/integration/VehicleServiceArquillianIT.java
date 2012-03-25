@@ -34,7 +34,7 @@ import com.makingdevsimple.vehicleservice.database.VehicleServerDatabase;
 public class VehicleServiceArquillianIT {
 
     private static VehicleServerDatabase database;
-
+ 
     @Deployment
     public static WebArchive setupDeployment() throws Exception {
 
