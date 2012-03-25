@@ -7,8 +7,6 @@ import org.springframework.stereotype.Component;
 
 import com.makingdevsimple.vehicleservice.domain.Vehicle;
 
-;
-
 @Component
 public class VehicleFinderServiceImpl implements VehicleFinderService {
 
