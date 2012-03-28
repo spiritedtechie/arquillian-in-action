@@ -29,7 +29,7 @@ public abstract class VehicleDatabase {
         return new JdbcDatabaseTester(getJdbcDriver(), getJdbcUrl(), getJdbcUser(), getJdbcPassword());
     }
 
-    public String getJdbcUrl() {
+    private String getJdbcUrl() {
         return getJdbcProperties().getProperty("JDBC.URL");
     }
 
