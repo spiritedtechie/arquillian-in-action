@@ -11,7 +11,7 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<version.org.springframework>3.1.0.RELEASE</version.org.springframework>
 		<version.org.apache.tomcat>7.0.25</version.org.apache.tomcat>
-		<version.org.jboss.resteasy>2.3.1.GA</version.org.jboss.resteasy>
+		<version.org.jboss.resteasy>2.3.2.Final</version.org.jboss.resteasy>
 		<tomcat.home>${project.build.directory}/apache-tomcat-${version.org.apache.tomcat}</tomcat.home>
 	</properties>
 
@@ -33,36 +33,30 @@
 		<dependency>
 			<groupId>javax.ws.rs</groupId>
 			<artifactId>jsr311-api</artifactId>
-			<version>1.1.1</version>
 		</dependency>
 
 		<!-- JAX-RS implementation -->
 		<dependency>
 			<groupId>org.jboss.resteasy</groupId>
 			<artifactId>resteasy-jaxrs</artifactId>
-			<version>${version.org.jboss.resteasy}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.jboss.resteasy</groupId>
 			<artifactId>resteasy-jaxb-provider</artifactId>
-			<version>${version.org.jboss.resteasy}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.jboss.resteasy</groupId>
 			<artifactId>resteasy-jettison-provider</artifactId>
-			<version>${version.org.jboss.resteasy}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.jboss.resteasy</groupId>
 			<artifactId>resteasy-spring</artifactId>
-			<version>${version.org.jboss.resteasy}</version>
 		</dependency>
 
 		<!-- Database & JPA -->
 		<dependency>
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-entitymanager</artifactId>
-			<version>4.0.1.Final</version>
 		</dependency>
 
 		<!-- Dependency Injection -->
@@ -196,24 +190,114 @@
 					<target>1.6</target>
 				</configuration>
 			</plugin>
-			<plugin>
-				<artifactId>maven-failsafe-plugin</artifactId>
-				<version>2.8</version>
-				<executions>
-					<execution>
-						<goals>
-							<goal>integration-test</goal>
-							<goal>verify</goal>
-						</goals>
-					</execution>
-				</executions>
-			</plugin>
 		</plugins>
 	</build>
 
 	<profiles>
+
 		<profile>
-			<id>arquillian-tomcat</id>
+			<id>jboss-as-7</id>
+			<dependencyManagement>
+				<dependencies>
+
+					<!-- JAX-RS API -->
+					<dependency>
+						<groupId>javax.ws.rs</groupId>
+						<artifactId>jsr311-api</artifactId>
+						<version>1.1.1</version>
+						<scope>provided</scope>
+					</dependency>
+
+					<dependency>
+						<groupId>org.jboss.resteasy</groupId>
+						<artifactId>resteasy-jaxrs</artifactId>
+						<version>${version.org.jboss.resteasy}</version>
+						<scope>provided</scope>
+					</dependency>
+					<dependency>
+						<groupId>org.jboss.resteasy</groupId>
+						<artifactId>resteasy-jaxb-provider</artifactId>
+						<version>${version.org.jboss.resteasy}</version>
+						<scope>provided</scope>
+					</dependency>
+					<dependency>
+						<groupId>org.jboss.resteasy</groupId>
+						<artifactId>resteasy-jettison-provider</artifactId>
+						<version>${version.org.jboss.resteasy}</version>
+						<scope>provided</scope>
+					</dependency>
+					<dependency>
+						<groupId>org.jboss.resteasy</groupId>
+						<artifactId>resteasy-spring</artifactId>
+						<version>${version.org.jboss.resteasy}</version>
+						<scope>provided</scope>
+					</dependency>
+
+					<!-- Database & JPA -->
+					<dependency>
+						<groupId>org.hibernate</groupId>
+						<artifactId>hibernate-entitymanager</artifactId>
+						<version>4.0.1.Final</version>
+						<scope>provided</scope>
+					</dependency>
+
+				</dependencies>
+			</dependencyManagement>
+		</profile>
+
+		<profile>
+			<id>tomcat-7</id>
+			<activation>
+				<activeByDefault>true</activeByDefault>
+			</activation>
+			<build>
+				<finalName>${project.artifactId}-tomcat</finalName>
+			</build>
+			<dependencyManagement>
+				<dependencies>
+					<!-- JAX-RS API -->
+					<dependency>
+						<groupId>javax.ws.rs</groupId>
+						<artifactId>jsr311-api</artifactId>
+						<version>1.1.1</version>
+					</dependency>
+
+					<dependency>
+						<groupId>org.jboss.resteasy</groupId>
+						<artifactId>resteasy-jaxrs</artifactId>
+						<version>${version.org.jboss.resteasy}</version>
+					</dependency>
+					<dependency>
+						<groupId>org.jboss.resteasy</groupId>
+						<artifactId>resteasy-jaxb-provider</artifactId>
+						<version>${version.org.jboss.resteasy}</version>
+					</dependency>
+					<dependency>
+						<groupId>org.jboss.resteasy</groupId>
+						<artifactId>resteasy-jettison-provider</artifactId>
+						<version>${version.org.jboss.resteasy}</version>
+					</dependency>
+					<dependency>
+						<groupId>org.jboss.resteasy</groupId>
+						<artifactId>resteasy-spring</artifactId>
+						<version>${version.org.jboss.resteasy}</version>
+					</dependency>
+
+					<!-- Database & JPA -->
+					<dependency>
+						<groupId>org.hibernate</groupId>
+						<artifactId>hibernate-entitymanager</artifactId>
+						<version>4.0.1.Final</version>
+					</dependency>
+
+				</dependencies>
+			</dependencyManagement>
+
+		</profile>
+
+
+		<profile>
+			<id>arquillian-tomcat-7</id>
 			<activation>
 				<activeByDefault>true</activeByDefault>
 			</activation>
@@ -261,6 +345,18 @@
 										</resource>
 									</resources>
 								</configuration>
+							</execution>
+						</executions>
+					</plugin>
+					<plugin>
+						<artifactId>maven-failsafe-plugin</artifactId>
+						<version>2.8</version>
+						<executions>
+							<execution>
+								<goals>
+									<goal>integration-test</goal>
+									<goal>verify</goal>
+								</goals>
 							</execution>
 						</executions>
 					</plugin>
