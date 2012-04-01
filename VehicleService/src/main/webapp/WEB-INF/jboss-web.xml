@@ -1,0 +1,8 @@
+<jboss-web>
+    <context-root>vehicle-service</context-root>
+    <resource-env-ref>
+		<resource-env-ref-name>jdbc/VehicleDataSource</resource-env-ref-name>
+		<resource-env-ref-type>javax.sql.DataSource</resource-env-ref-type>
+		<jndi-name>java:jboss/datasources/VehicleDataSource</jndi-name>
+	</resource-env-ref>
+</jboss-web>
