@@ -11,10 +11,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import com.makingdevsimple.vehicleservice.VehicleResource;
 import com.makingdevsimple.vehicleservice.database.VehicleInProcessDatabase;
 import com.makingdevsimple.vehicleservice.domain.Vehicle;
 import com.makingdevsimple.vehicleservice.exception.VehicleNotFoundException;
+import com.makingdevsimple.vehicleservice.rest.VehicleResource;
 
 /**
  * To test that spring application context wires up correctly

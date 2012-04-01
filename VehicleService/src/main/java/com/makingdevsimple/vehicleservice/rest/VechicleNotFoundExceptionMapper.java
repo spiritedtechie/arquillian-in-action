@@ -1,4 +1,4 @@
-package com.makingdevsimple.vehicleservice;
+package com.makingdevsimple.vehicleservice.rest;
 
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.Response.Status;

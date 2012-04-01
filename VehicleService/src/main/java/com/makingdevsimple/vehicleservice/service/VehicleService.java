@@ -1,8 +1,8 @@
-package com.makingdevsimple.vehicleservice.finder;
+package com.makingdevsimple.vehicleservice.service;
 
 import com.makingdevsimple.vehicleservice.domain.Vehicle;
 
-public interface VehicleFinderService {
+public interface VehicleService {
 
     Vehicle findVehicleByRegistration(String registrationNumber);
 

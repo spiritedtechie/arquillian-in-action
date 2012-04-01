@@ -1,4 +1,4 @@
-package com.makingdevsimple.vehicleservice.finder;
+package com.makingdevsimple.vehicleservice.service;
 
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.CoreMatchers.notNullValue;
@@ -14,8 +14,10 @@ import org.junit.Test;
 
 import com.makingdevsimple.vehicleservice.database.VehicleInProcessDatabase;
 import com.makingdevsimple.vehicleservice.domain.Vehicle;
+import com.makingdevsimple.vehicleservice.service.VehicleService;
+import com.makingdevsimple.vehicleservice.service.VehicleServiceImpl;
 
-public class VehicleFinderServiceTest {
+public class VehicleServiceTest {
 
     private static final String REG_NO = "A123BCD";
 
@@ -23,7 +25,7 @@ public class VehicleFinderServiceTest {
 
     private EntityManager em;
 
-    private VehicleFinderService service;
+    private VehicleService service;
 
     @Before
     public void setUp() throws Exception {
@@ -35,7 +37,7 @@ public class VehicleFinderServiceTest {
         em =
                 Persistence.createEntityManagerFactory("vehicle", database.getEntityManagerProperties())
                         .createEntityManager();
-        service = new VehicleFinderServiceImpl(em);
+        service = new VehicleServiceImpl(em);
 
         // Do not need this until we start inserting data through the em
         em.getTransaction().begin();

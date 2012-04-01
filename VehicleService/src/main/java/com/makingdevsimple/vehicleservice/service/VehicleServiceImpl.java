@@ -1,4 +1,4 @@
-package com.makingdevsimple.vehicleservice.finder;
+package com.makingdevsimple.vehicleservice.service;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -8,16 +8,16 @@ import org.springframework.stereotype.Component;
 import com.makingdevsimple.vehicleservice.domain.Vehicle;
 
 @Component
-public class VehicleFinderServiceImpl implements VehicleFinderService {
+public class VehicleServiceImpl implements VehicleService {
 
     @PersistenceContext
     private EntityManager em;
 
-    public VehicleFinderServiceImpl() {
+    public VehicleServiceImpl() {
 
     }
 
-    public VehicleFinderServiceImpl(final EntityManager em) {
+    public VehicleServiceImpl(final EntityManager em) {
         this.em = em;
     }
 

@@ -1,4 +1,4 @@
-package com.makingdevsimple.vehicleservice;
+package com.makingdevsimple.vehicleservice.rest;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
@@ -9,19 +9,19 @@ import org.springframework.stereotype.Component;
 
 import com.makingdevsimple.vehicleservice.domain.Vehicle;
 import com.makingdevsimple.vehicleservice.exception.VehicleNotFoundException;
-import com.makingdevsimple.vehicleservice.finder.VehicleFinderService;
+import com.makingdevsimple.vehicleservice.service.VehicleService;
 
 @Path("/vehicle")
 @Component
 public class VehicleResourceImpl implements VehicleResource {
 
     @Autowired
-    private VehicleFinderService finderService;
+    private VehicleService finderService;
 
     public VehicleResourceImpl() {
     }
 
-    public VehicleResourceImpl(final VehicleFinderService finderService) {
+    public VehicleResourceImpl(final VehicleService finderService) {
         this.finderService = finderService;
     }
 

@@ -1,4 +1,4 @@
-package com.makingdevsimple.vehicleservice;
+package com.makingdevsimple.vehicleservice.rest;
 
 import static com.makingdevsimple.vehicleservice.domain.VehicleBuilder.aVehicle;
 import static org.hamcrest.CoreMatchers.is;
@@ -21,7 +21,11 @@ import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
-import com.makingdevsimple.vehicleservice.finder.VehicleFinderService;
+import com.makingdevsimple.vehicleservice.rest.InvalidParameterExceptionMapper;
+import com.makingdevsimple.vehicleservice.rest.VechicleNotFoundExceptionMapper;
+import com.makingdevsimple.vehicleservice.rest.VehicleResource;
+import com.makingdevsimple.vehicleservice.rest.VehicleResourceImpl;
+import com.makingdevsimple.vehicleservice.service.VehicleService;
 
 @RunWith(JMock.class)
 public class VehicleResourceTest {
@@ -30,7 +34,7 @@ public class VehicleResourceTest {
 
     private Mockery mockery;
 
-    private VehicleFinderService finderService;
+    private VehicleService service;
 
     private Dispatcher dispatcher;
 
@@ -38,9 +42,9 @@ public class VehicleResourceTest {
     public void setupService() {
 
         mockery = new JUnit4Mockery();
-        finderService = mockery.mock(VehicleFinderService.class);
+        service = mockery.mock(VehicleService.class);
 
-        resource = new VehicleResourceImpl(finderService);
+        resource = new VehicleResourceImpl(service);
 
         dispatcher = MockDispatcherFactory.createDispatcher();
         dispatcher.getRegistry().addSingletonResource(resource);
@@ -112,7 +116,7 @@ public class VehicleResourceTest {
 
         mockery.checking(new Expectations() {
             {
-                oneOf(finderService).findVehicleByRegistration(with(regNo));
+                oneOf(service).findVehicleByRegistration(with(regNo));
                 will(returnValue(null));
             }
         });
@@ -125,7 +129,7 @@ public class VehicleResourceTest {
     private void expectVehicleFinderToReturnVehicle(final String regNo) {
         mockery.checking(new Expectations() {
             {
-                oneOf(finderService).findVehicleByRegistration(with(regNo));
+                oneOf(service).findVehicleByRegistration(with(regNo));
                 will(returnValue(aVehicle().withRegistrationNumber(regNo).build()));
             }
         });
