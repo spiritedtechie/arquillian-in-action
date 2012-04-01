@@ -7,23 +7,23 @@
 		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
 		http://camel.apache.org/schema/spring http://camel.apache.org/schema/spring/camel-spring.xsd
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd 
-		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd" >
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd">
 
 	<context:component-scan base-package="com.makingdevsimple" />
 	<tx:annotation-driven />
 
 	<!-- From the server container -->
-	<jee:jndi-lookup id="dataSource" jndi-name="jdbc/VehicleDataSource"/>
+	<jee:jndi-lookup id="dataSource" jndi-name="jdbc/VehicleDataSource" />
 
 	<bean id="emf"
 		class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
-		<property name="persistenceUnitName" value="vehicle" />
 		<property name="dataSource" ref="dataSource" />
-		<property name="loadTimeWeaver">
-			<bean
-				class="org.springframework.instrument.classloading.InstrumentationLoadTimeWeaver" />
-		</property>
+		<property name="packagesToScan" value="com.makingdevsimple" />
+		<property name="jpaVendorAdapter" ref="jpaVendorAdaptor" />
 	</bean>
+
+	<bean id="jpaVendorAdaptor"
+		class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter" />
 
 	<bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
 		<property name="entityManagerFactory" ref="emf" />

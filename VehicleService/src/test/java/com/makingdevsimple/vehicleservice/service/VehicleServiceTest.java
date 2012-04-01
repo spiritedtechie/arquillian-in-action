@@ -14,8 +14,6 @@ import org.junit.Test;
 
 import com.makingdevsimple.vehicleservice.database.VehicleInProcessDatabase;
 import com.makingdevsimple.vehicleservice.domain.Vehicle;
-import com.makingdevsimple.vehicleservice.service.VehicleService;
-import com.makingdevsimple.vehicleservice.service.VehicleServiceImpl;
 
 public class VehicleServiceTest {
 
@@ -35,11 +33,10 @@ public class VehicleServiceTest {
         database.insertSingleVehicle();
 
         em =
-                Persistence.createEntityManagerFactory("vehicle", database.getEntityManagerProperties())
-                        .createEntityManager();
+                Persistence.createEntityManagerFactory("com.makingdevsimple.vehicleservice",
+                        database.getEntityManagerProperties()).createEntityManager();
         service = new VehicleServiceImpl(em);
 
-        // Do not need this until we start inserting data through the em
         em.getTransaction().begin();
     }
 
