@@ -257,7 +257,7 @@
 									<overwrite>true</overwrite>
 									<resources>
 										<resource>
-											<directory>${basedir}/src/test/resources/container</directory>
+											<directory>${basedir}/src/test/tomcat</directory>
 										</resource>
 									</resources>
 								</configuration>
