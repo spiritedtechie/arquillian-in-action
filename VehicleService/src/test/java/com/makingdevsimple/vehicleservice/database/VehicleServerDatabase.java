@@ -1,8 +1,5 @@
 package com.makingdevsimple.vehicleservice.database;
 
-import java.io.IOException;
-import java.util.Properties;
-
 public class VehicleServerDatabase extends VehicleDatabase {
 
     private org.hsqldb.Server server;
@@ -28,14 +25,8 @@ public class VehicleServerDatabase extends VehicleDatabase {
     }
 
     @Override
-    protected Properties getJdbcProperties() {
-        final Properties props = new Properties();
-        try {
-            props.load(this.getClass().getClassLoader().getResourceAsStream("database/server/database.properties"));
-        } catch (final IOException e) {
-            throw new IllegalStateException("Cannot load properties");
-        }
-        return props;
+    protected String getDatabasePropertiesClasspathLocation() {
+        return "database/hsql-server/database.properties";
     }
 
 }

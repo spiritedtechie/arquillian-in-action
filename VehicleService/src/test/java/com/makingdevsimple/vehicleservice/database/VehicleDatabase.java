@@ -2,6 +2,7 @@ package com.makingdevsimple.vehicleservice.database;
 
 import java.io.File;
 import java.io.FileReader;
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Properties;
@@ -45,7 +46,17 @@ public abstract class VehicleDatabase {
         return getJdbcProperties().getProperty("JDBC.PASSWORD");
     }
 
-    protected abstract Properties getJdbcProperties();
+    private Properties getJdbcProperties() {
+        final Properties props = new Properties();
+        try {
+            props.load(this.getClass().getClassLoader().getResourceAsStream(getDatabasePropertiesClasspathLocation()));
+        } catch (final IOException e) {
+            throw new IllegalStateException("Cannot load properties");
+        }
+        return props;
+    }
+
+    protected abstract String getDatabasePropertiesClasspathLocation();
 
     public Map<String, String> getEntityManagerProperties() {
 
