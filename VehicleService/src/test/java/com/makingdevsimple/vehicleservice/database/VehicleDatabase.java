@@ -31,22 +31,22 @@ public abstract class VehicleDatabase {
     }
 
     public String getJdbcUrl() {
-        return getJdbcProperties().getProperty("JDBC.URL");
+        return getDatabaseProperties().getProperty("JDBC.URL");
     }
 
     private String getJdbcDriver() {
-        return getJdbcProperties().getProperty("JDBC.DRIVER");
+        return getDatabaseProperties().getProperty("JDBC.DRIVER");
     }
 
     private String getJdbcUser() {
-        return getJdbcProperties().getProperty("JDBC.USER");
+        return getDatabaseProperties().getProperty("JDBC.USER");
     }
 
     private String getJdbcPassword() {
-        return getJdbcProperties().getProperty("JDBC.PASSWORD");
+        return getDatabaseProperties().getProperty("JDBC.PASSWORD");
     }
 
-    private Properties getJdbcProperties() {
+    private Properties getDatabaseProperties() {
         final Properties props = new Properties();
         try {
             props.load(this.getClass().getClassLoader().getResourceAsStream(getDatabasePropertiesClasspathLocation()));
