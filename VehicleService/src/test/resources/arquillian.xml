@@ -14,4 +14,11 @@
             <property name="serverConfig">server.xml</property>
         </configuration>
     </container>
+
+    <container qualifier="jbossas-7-managed">
+        <configuration>
+            <property name="jbossHome">target/jboss-as-7.1.1.Final</property>
+        </configuration>
+    </container>
+
 </arquillian>

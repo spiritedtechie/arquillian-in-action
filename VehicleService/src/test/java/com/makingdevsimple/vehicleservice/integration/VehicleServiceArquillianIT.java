@@ -42,7 +42,7 @@ public class VehicleServiceArquillianIT {
         database.startServer();
 
         return ShrinkWrap
-                .createFromZipFile(WebArchive.class, new File("target/vehicle-service-tomcat.war"))
+                .createFromZipFile(WebArchive.class, new File("target/vehicle-service.war"))
                 .addAsManifestResource(new StringAsset(database.getTomcatDataSourceContext()), "context.xml")
                 .addAsLibraries(
                         DependencyResolvers.use(MavenDependencyResolver.class).loadMetadataFromPom("pom.xml")
@@ -77,7 +77,7 @@ public class VehicleServiceArquillianIT {
     private VehicleResponse executeHttpCallToFindVehicle(final String regNo) throws Exception {
 
         final HttpClient httpClient = new DefaultHttpClient();
-        final HttpGet httpget = new HttpGet("http://localhost:8080/vehicle-service-tomcat/vehicle/" + regNo);
+        final HttpGet httpget = new HttpGet("http://localhost:8080/vehicle-service/vehicle/" + regNo);
         final HttpResponse response = httpClient.execute(httpget);
 
         return new VehicleResponse(response.getStatusLine().getStatusCode(), IOUtils.toString(response.getEntity()
