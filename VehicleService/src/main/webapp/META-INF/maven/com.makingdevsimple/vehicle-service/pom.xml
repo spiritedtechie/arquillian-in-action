@@ -24,6 +24,90 @@
 				<scope>import</scope>
 				<type>pom</type>
 			</dependency>
+
+			<!-- Logging -->
+			<dependency>
+				<groupId>org.slf4j</groupId>
+				<artifactId>slf4j-api</artifactId>
+				<version>1.6.4</version>
+			</dependency>
+			<dependency>
+				<groupId>org.slf4j</groupId>
+				<artifactId>slf4j-log4j12</artifactId>
+				<version>1.6.4</version>
+			</dependency>
+
+			<!-- Commons -->
+			<dependency>
+				<artifactId>commons-codec</artifactId>
+				<groupId>commons-codec</groupId>
+				<version>1.5</version>
+			</dependency>
+
+			<!-- Dependency Injection -->
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-context</artifactId>
+				<version>${version.org.springframework}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-orm</artifactId>
+				<version>${version.org.springframework}</version>
+			</dependency>
+			<dependency>
+				<groupId>cglib</groupId>
+				<artifactId>cglib</artifactId>
+				<version>2.2.2</version>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-web</artifactId>
+				<version>${version.org.springframework}</version>
+			</dependency>
+
+			<!-- JAX-RS API -->
+			<dependency>
+				<groupId>javax.ws.rs</groupId>
+				<artifactId>jsr311-api</artifactId>
+				<version>1.1.1</version>
+			</dependency>
+
+			<!-- JAX-RS implementation -->
+			<dependency>
+				<groupId>org.jboss.resteasy</groupId>
+				<artifactId>resteasy-jaxrs</artifactId>
+				<version>${version.org.jboss.resteasy}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.jboss.resteasy</groupId>
+				<artifactId>resteasy-jaxb-provider</artifactId>
+				<version>${version.org.jboss.resteasy}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.jboss.resteasy</groupId>
+				<artifactId>resteasy-jettison-provider</artifactId>
+				<version>${version.org.jboss.resteasy}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.jboss.resteasy</groupId>
+				<artifactId>resteasy-spring</artifactId>
+				<version>${version.org.jboss.resteasy}</version>
+			</dependency>
+
+			<!-- Database & JPA -->
+			<dependency>
+				<groupId>org.hibernate</groupId>
+				<artifactId>hibernate-entitymanager</artifactId>
+				<version>4.0.1.Final</version>
+			</dependency>
+
+			<dependency>
+				<groupId>joda-time</groupId>
+				<artifactId>joda-time</artifactId>
+				<version>2.0</version>
+			</dependency>
+
 		</dependencies>
 	</dependencyManagement>
 
@@ -33,19 +117,16 @@
 		<dependency>
 			<groupId>org.slf4j</groupId>
 			<artifactId>slf4j-api</artifactId>
-			<version>1.6.4</version>
 		</dependency>
 		<dependency>
 			<groupId>org.slf4j</groupId>
 			<artifactId>slf4j-log4j12</artifactId>
-			<version>1.6.4</version>
 		</dependency>
 
 		<!-- Commons -->
 		<dependency>
 			<artifactId>commons-codec</artifactId>
 			<groupId>commons-codec</groupId>
-			<version>1.5</version>
 		</dependency>
 
 		<!-- Database & JPA -->
@@ -58,22 +139,18 @@
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-context</artifactId>
-			<version>${version.org.springframework}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-orm</artifactId>
-			<version>${version.org.springframework}</version>
 		</dependency>
 		<dependency>
 			<groupId>cglib</groupId>
 			<artifactId>cglib</artifactId>
-			<version>2.2.2</version>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-web</artifactId>
-			<version>${version.org.springframework}</version>
 		</dependency>
 
 		<!-- JAX-RS API -->
@@ -104,7 +181,6 @@
 		<dependency>
 			<groupId>joda-time</groupId>
 			<artifactId>joda-time</artifactId>
-			<version>2.0</version>
 		</dependency>
 
 		<!-- Test -->
@@ -235,32 +311,27 @@
 					<dependency>
 						<groupId>javax.ws.rs</groupId>
 						<artifactId>jsr311-api</artifactId>
-						<version>1.1.1</version>
 						<scope>provided</scope>
 					</dependency>
 
 					<dependency>
 						<groupId>org.jboss.resteasy</groupId>
 						<artifactId>resteasy-jaxrs</artifactId>
-						<version>${version.org.jboss.resteasy}</version>
 						<scope>provided</scope>
 					</dependency>
 					<dependency>
 						<groupId>org.jboss.resteasy</groupId>
 						<artifactId>resteasy-jaxb-provider</artifactId>
-						<version>${version.org.jboss.resteasy}</version>
 						<scope>provided</scope>
 					</dependency>
 					<dependency>
 						<groupId>org.jboss.resteasy</groupId>
 						<artifactId>resteasy-jettison-provider</artifactId>
-						<version>${version.org.jboss.resteasy}</version>
 						<scope>provided</scope>
 					</dependency>
 					<dependency>
 						<groupId>org.jboss.resteasy</groupId>
 						<artifactId>resteasy-spring</artifactId>
-						<version>${version.org.jboss.resteasy}</version>
 						<scope>provided</scope>
 					</dependency>
 
@@ -268,7 +339,6 @@
 					<dependency>
 						<groupId>org.hibernate</groupId>
 						<artifactId>hibernate-entitymanager</artifactId>
-						<version>4.0.1.Final</version>
 						<scope>provided</scope>
 					</dependency>
 
@@ -281,46 +351,6 @@
 			<activation>
 				<activeByDefault>true</activeByDefault>
 			</activation>
-
-			<dependencyManagement>
-				<dependencies>
-					<!-- JAX-RS API -->
-					<dependency>
-						<groupId>javax.ws.rs</groupId>
-						<artifactId>jsr311-api</artifactId>
-						<version>1.1.1</version>
-					</dependency>
-
-					<dependency>
-						<groupId>org.jboss.resteasy</groupId>
-						<artifactId>resteasy-jaxrs</artifactId>
-						<version>${version.org.jboss.resteasy}</version>
-					</dependency>
-					<dependency>
-						<groupId>org.jboss.resteasy</groupId>
-						<artifactId>resteasy-jaxb-provider</artifactId>
-						<version>${version.org.jboss.resteasy}</version>
-					</dependency>
-					<dependency>
-						<groupId>org.jboss.resteasy</groupId>
-						<artifactId>resteasy-jettison-provider</artifactId>
-						<version>${version.org.jboss.resteasy}</version>
-					</dependency>
-					<dependency>
-						<groupId>org.jboss.resteasy</groupId>
-						<artifactId>resteasy-spring</artifactId>
-						<version>${version.org.jboss.resteasy}</version>
-					</dependency>
-
-					<!-- Database & JPA -->
-					<dependency>
-						<groupId>org.hibernate</groupId>
-						<artifactId>hibernate-entitymanager</artifactId>
-						<version>4.0.1.Final</version>
-					</dependency>
-
-				</dependencies>
-			</dependencyManagement>
 
 		</profile>
 
