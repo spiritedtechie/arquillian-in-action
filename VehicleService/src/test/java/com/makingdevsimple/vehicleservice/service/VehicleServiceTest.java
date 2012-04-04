@@ -12,6 +12,7 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
+import com.makingdevsimple.vehicleservice.database.VehicleDatabase;
 import com.makingdevsimple.vehicleservice.database.VehicleInProcessDatabase;
 import com.makingdevsimple.vehicleservice.domain.Vehicle;
 
@@ -19,7 +20,7 @@ public class VehicleServiceTest {
 
     private static final String REG_NO = "A123BCD";
 
-    private VehicleInProcessDatabase database;
+    private VehicleDatabase database;
 
     private EntityManager em;
 
