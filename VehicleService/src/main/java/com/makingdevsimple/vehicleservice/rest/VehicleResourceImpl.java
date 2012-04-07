@@ -31,7 +31,7 @@ public class VehicleResourceImpl implements VehicleResource {
     public Vehicle getVehicleByRegistration(@PathParam("regNo") final String registrationNumber)
             throws VehicleNotFoundException {
 
-        if ("AAA".equals(registrationNumber)) {
+        if ("AAA".eqals(registrationNumber)) {
             throw new IllegalArgumentException("Invalid registration number supplied");
         }
 
