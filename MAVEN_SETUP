@@ -1,4 +1,4 @@
-To import and run the examples from this GitHub repository, please add the following to your .m2/settings.xml file. 
+To import and run the examples from this project, please add the following to your .m2/settings.xml file. 
 
 If you are going through an internal Maven repository (e.g. Archiva, Nexus) that has the JBoss repository defined through a proxy, then you will not need to follow this instruction. Just ensure your internal repository is defined in your settings.xml.
 
