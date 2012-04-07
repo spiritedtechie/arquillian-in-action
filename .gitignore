@@ -4,3 +4,7 @@ VehicleService/src/main/webapp/META-INF/maven/com.makingdevsimple/vehicle-servic
 VehicleService/src/main/webapp/META-INF/maven/com.makingdevsimple/vehicle-service/pom.properties
 
 VehicleService/src/main/webapp/META-INF/maven/com.makingdevsimple/vehicle-service/pom.properties
+/.project
+/.settings
+
+.DS_Store
