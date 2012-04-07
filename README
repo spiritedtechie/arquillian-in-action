@@ -1,5 +1,7 @@
-Everything in this repository is related to posts on my blog: 
+This Maven project is related to posts on my blog: 
 
 http://makingdevsimple.blogspot.com 
 
-Specifically, posts that use the Vehicle Service source examples.
+(Specifically, posts that use the Vehicle Service source examples).
+
+Read the MAVEN_SETUP file before running a Maven build.
