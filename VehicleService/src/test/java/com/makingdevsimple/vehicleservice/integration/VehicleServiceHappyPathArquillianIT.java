@@ -1,16 +1,12 @@
 package com.makingdevsimple.vehicleservice.integration;
 
+import static com.makingdevsimple.vehicleservice.integration.VehicleServiceITHelper.executeHttpCallToFindVehicle;
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.text.StringContains.containsString;
 import static org.junit.Assert.assertThat;
 
 import java.io.File;
 
-import org.apache.commons.io.IOUtils;
-import org.apache.http.HttpResponse;
-import org.apache.http.client.HttpClient;
-import org.apache.http.client.methods.HttpGet;
-import org.apache.http.impl.client.DefaultHttpClient;
 import org.jboss.arquillian.container.test.api.Deployment;
 import org.jboss.arquillian.container.test.api.RunAsClient;
 import org.jboss.arquillian.junit.Arquillian;
@@ -31,7 +27,7 @@ import com.makingdevsimple.vehicleservice.database.VehicleServerDatabase;
  */
 @RunWith(Arquillian.class)
 @RunAsClient
-public class VehicleServiceArquillianIT {
+public class VehicleServiceHappyPathArquillianIT {
 
     private static VehicleServerDatabase database;
 
@@ -64,43 +60,5 @@ public class VehicleServiceArquillianIT {
         assertThat(response.getStatus(), is(200));
         assertThat(response.getVehicleXml(), containsString("<registrationNumber>" + "A123BCD"
                 + "</registrationNumber>"));
-    }
-
-    @Test
-    public void testVehicleNotFound() throws Exception {
-
-        final VehicleResponse response = executeHttpCallToFindVehicle("A456BCD");
-
-        assertThat(response.getStatus(), is(404));
-    }
-
-    private VehicleResponse executeHttpCallToFindVehicle(final String regNo) throws Exception {
-
-        final HttpClient httpClient = new DefaultHttpClient();
-        final HttpGet httpget = new HttpGet("http://localhost:8080/vehicle-service/vehicle/" + regNo);
-        final HttpResponse response = httpClient.execute(httpget);
-
-        return new VehicleResponse(response.getStatusLine().getStatusCode(), IOUtils.toString(response.getEntity()
-                .getContent()));
-    }
-
-    private class VehicleResponse {
-
-        private final int status;
-
-        private final String vehicleXml;
-
-        public VehicleResponse(final int status, final String vehicleXml) {
-            this.status = status;
-            this.vehicleXml = vehicleXml;
-        }
-
-        public int getStatus() {
-            return status;
-        }
-
-        public String getVehicleXml() {
-            return vehicleXml;
-        }
     }
 }
