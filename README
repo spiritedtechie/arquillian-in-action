@@ -5,3 +5,13 @@ http://makingdevsimple.blogspot.com
 (Specifically, posts that use the Vehicle Service source examples).
 
 Read the MAVEN_SETUP file before running a Maven build.
+
+Includes:
+
+- In-container testing using Arquillian
+- JAX-RS with RestEasy and Spring
+- Unit testing JAX-RS resources using RestEasy MockDispatcher
+- RestEasy JAXB and JSON providers for automated conversion
+- Database testing with DBUnit, JPA and HSQL
+- Spring Integration tests for wider component testing
+- Maven profiles for multi-container builds and multi-container Arquillian tests
