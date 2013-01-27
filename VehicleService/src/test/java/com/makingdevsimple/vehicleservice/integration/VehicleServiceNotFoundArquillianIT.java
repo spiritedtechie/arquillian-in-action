@@ -15,6 +15,7 @@ import org.jboss.shrinkwrap.api.asset.StringAsset;
 import org.jboss.shrinkwrap.api.spec.WebArchive;
 import org.jboss.shrinkwrap.resolver.api.DependencyResolvers;
 import org.jboss.shrinkwrap.resolver.api.maven.MavenDependencyResolver;
+import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -47,8 +48,16 @@ public class VehicleServiceNotFoundArquillianIT {
     @Before
     public void setUpDatabase() throws Exception {
 
+        System.out.println("*********** BEFORE *************");
         database.createTables();
         database.insertSingleVehicle();
+    }
+    
+    @After
+    public void tearDown() {
+        
+        System.out.println("*********** AFTER *************");
+        database.stopServer();
     }
 
     @Test
